@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John&Johny Solutions - حلول تقنية متكاملة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f6f7f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    header {
+      background: #001a33;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.8em;
+      letter-spacing: 2px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover {
+      background-color: #00b3ff;
+      color: #fff;
+    }
+    .hero {
+      background: url('https://nextechsolut.com/wp-content/uploads/2021/11/IT-solutions-banner.jpg') no-repeat center center/cover;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-content {
+      max-width: 700px;
+    }
+    .hero-content h1 {
+      font-size: 3.2em;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    }
+    .hero-content p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+    .btn-primary {
+      background-color: #00b3ff;
+      color: white;
+      font-weight: 700;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #008fcc;
+    }
+    section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 35px;
+    }
+    .service-card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgb(0 0 0 / 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgb(0 0 0 / 0.15);
+    }
+    .service-icon {
+      font-size: 45px;
+      margin-bottom: 18px;
+      color: #00b3ff;
+    }
+    .service-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .service-card p {
+      font-size: 1em;
+      color: #555;
+    }
+    .portfolio {
+      text-align: center;
+    }
+    .portfolio h2 {
+      font-size: 2.4em;
+      margin-bottom: 35px;
+      color: #001a33;
+    }
+    .portfolio-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .portfolio-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+      max-width: 350px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-7px);
+    }
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+    }
+    .portfolio-item-info {
+      padding: 15px 18px;
+      text-align: right;
+    }
+    .portfolio-item-info h4 {
+      margin: 0 0 8px;
+      font-weight: 700;
+      color: #001a33;
+    }
+    .portfolio-item-info p {
+      margin: 0;
+      color: #666;
+      font-size: 0.95em;
+    }
+    .contact-section {
+      background-color: #001a33;
+      padding: 50px 20px;
+      color: white;
+      border-radius: 15px;
+      max-width: 700px;
+      margin: 60px auto 80px auto;
+    }
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1em;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    form button {
+      background-color: #00b3ff;
+      border: none;
+      color: white;
+      padding: 15px 0;
+      width: 100%;
+      font-size: 1.1em;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #008fcc;
+    }
+    footer {
+      background-color: #001a33;
+      color: #c7d0db;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .portfolio-items {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">NexTech Solutions</div>
+    <nav>
+      <ul>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#portfolio">أعمالنا</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>حلول تقنية مبتكرة لأعمالك</h1>
+      <p>نقدم لك أفضل الخدمات الرقمية التي ترفع من قيمة مشروعك وتضاعف نجاحك</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">احصل على استشارة مجانية</button>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 style="text-align:center; color:#001a33;">خدماتنا</h2>
+    <div class="services">
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>تطوير المواقع الإلكترونية</h3>
+        <p>إنشاء مواقع متكاملة ومتجاوبة تلبي كافة احتياجات عملك.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>تطبيقات الهواتف الذكية</h3>
+        <p>برمجة تطبيقات أندرويد وiOS عالية الجودة وسهلة الاستخدام.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>الحوسبة السحابية</h3>
+        <p>حلول متقدمة للحوسبة السحابية لتحسين أداء شركتك وموثوقيتها.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔒</div>
+        <h3>أمن المعلومات</h3>
+        <p>تأمين بياناتك وحماية خصوصيتك من التهديدات الإلكترونية.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <h2>أعمالنا</h2>
+    <div class="portfolio-items">
+      <div class="portfolio-item">
+        <img src="https://nextechsolut.com/wp-content/uploads/2021/11/project1-350x200.jpg" alt="مشروع 1" />
+        <div class="portfolio-item-info">
+          <h4>تصميم متجر إلكتروني</h4>
+          <p>تطوير متجر إلكتروني متكامل بواجهة سهلة الاستخدام.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://nextechsolut.com/wp-content/uploads/2021/11/project2-350x200.jpg" alt="مشروع 2" />
+        <div class="portfolio-item-info">
+          <h4>تطبيق توصيل ذكي</h4>
+          <p>تطوير تطبيق فعال لخدمات التوصيل بأداء عالي.</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="https://nextechsolut.com/wp-content/uploads/2021/11/project3-350x200.jpg" alt="مشروع 3" />
+        <div class="portfolio-item-info">
+          <h4>نظام إدارة محتوى</h4>
+          <p>إنشاء نظام سهل لإدارة المحتوى على موقعك بسرعة وكفاءة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>تواصل معنا</h2>
+    <form onsubmit="sendToWhatsApp(event)">
+      <label for="name">الاسم الكامل</label>
+      <input type="text" id="name" placeholder="أدخل اسمك" required />
+      <label for="phone">رقم الهاتف</label>
+      <input type="tel" id="phone" placeholder="" pattern="[0-9]{8,15}" required />
+      <label for="service">الخدمة المطلوبة</label>
+      <input type="text" id="service" placeholder="مثلاً تطوير موقع، تطبيق،..." required />
+      <label for="message">رسالة إضافية (اختياري)</label>
+      <textarea id="message" placeholder="أكتب أي تفاصيل إضافية"></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2025 - John&Johny Solutions
+  </footer>
+
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+      let service = document.getElementById("service").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      if (!name || !phone || !service) {
+        alert("يرجى ملء الحقول الأساسية.");
+        return;
+      }
+
+      let text = `طلب خدمة من موقع John&Johny Solutions:%0Aالاسم: ${encodeURIComponent(name)}%0Aرقم الهاتف: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aرسالة إضافية: ${encodeURIComponent(message)}`;
+
+      let whatsappNumber = "96565528595"; // رقم الواتساب مع كود البلد بدون +
+      let url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
